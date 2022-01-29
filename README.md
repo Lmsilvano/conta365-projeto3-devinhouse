@@ -1,6 +1,6 @@
 # Sobre o projeto
- Primeiro projeto avaliativo do segundo módulo Backend do curso do senai DEVInhouse.
- O Projeto consiste na elaboração de um api simples(Conta365) de CRUD em dados de usuários, e dados financeiros associados a esses usuários, em um banco de dados falso(Dois arquivos JSON), utilizando NodeJS (Com expressJS) entre outras libs do node.
+ Primeiro projeto avaliativo do segundo módulo(Backend) do curso do DEVInhouse(SENAI).
+ O Projeto consiste na elaboração de um api simples(Conta365) de CRUD em dados de usuários e dados financeiros associados a esses usuários, em um banco de dados falso(Dois arquivos JSON), utilizando NodeJS (Com expressJS) entre outras libs do node.
  
  # Instruções para rodar o Projeto.
 * Basta clonar, ou fazer donwload deste repositório, e com o Node devidamente instalado, 
