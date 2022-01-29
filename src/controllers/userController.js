@@ -85,17 +85,17 @@ module.exports = {
         const existUser = users.find((item) => item.id === Number(id))
         if (!existUser) res.status(404).send({ message: "User id not found" })
         return res.status(200).send({ user: existUser })
+    },
+    async populateDb(req, res) {
+        try {
+            const response = await axios.get('https://random-data-api.com/api/users/random_user?size=35')
+            response.data.map((item) => {
+                return createOrUpdateData('user.json', { name: `${item.first_name} ${item.last_name}`, email: item.email })
+            })
+            return res.status(200).send({ message: 'Database de usuários povoado com sucesso.' })
+        } catch (error) {
+            return res.status(400).json({ error: error.message })
+        }
     }
-    // async populateDb(req, res) {
-    //     try {
-    //         const response = await axios.get('https://random-data-api.com/api/users/random_user?size=35')
-    //         response.data.map((item) => {
-    //             return createOrUpdateData('user.json', { name: `${item.first_name} ${item.last_name}`, email: item.email })
-    //         })
-    //         return res.status(200).send({ message: 'Database de usuários povoado com sucesso.' })
-    //     } catch (error) {
-    //         return res.status(400).json({ error: error.message })
-    //     }
-    // }
 
 }

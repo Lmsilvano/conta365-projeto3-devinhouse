@@ -129,5 +129,53 @@
         "name": "Jogo eletrônico"
       }
     ]
+  },
+  {
+    "id": 3,
+    "userId": 16,
+    "financialData": [
+      {
+        "id": 103841916279,
+        "price": "175.00",
+        "typesofexpenses": "Casa",
+        "date": "2021-12-10T20:28:03.114Z ",
+        "name": "Limpeza"
+      },
+      {
+        "id": 149522199186,
+        "price": "452.00",
+        "typesofexpenses": "Lazer",
+        "date": "2022-09-10T20:28:03.114Z ",
+        "name": "Teatro"
+      },
+      {
+        "id": 708103188706,
+        "price": "250.00",
+        "typesofexpenses": "Educação",
+        "date": "2022-02-05T20:28:03.114Z ",
+        "name": "Livros"
+      },
+      {
+        "id": 1192607910518,
+        "price": "450.00",
+        "typesofexpenses": "Mercado",
+        "date": "2021-10-14T20:28:03.114Z ",
+        "name": "Shopping Itaguaçu"
+      },
+      {
+        "id": 1624212265097,
+        "price": "175.00",
+        "typesofexpenses": "Outros",
+        "date": "2021-10-14T20:28:03.114Z ",
+        "name": "Combustivel"
+      },
+      {
+        "id": 832223266091,
+        "price": "182.00",
+        "typesofexpenses": "Lazer",
+        "date": "2021-11-24T20:28:03.114Z ",
+        "name": "Bar"
+      }
+    ]
   }
 ]
