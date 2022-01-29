@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "userId": 12,
+    "financialData": [
+      {
+        "id": 319484124432,
+        "price": "175.00",
+        "typesofexpenses": "Casa",
+        "date": "2021-12-10T20:28:03.114Z ",
+        "name": "Limpeza"
+      },
+      {
+        "id": 178174757132,
+        "price": "452.00",
+        "typesofexpenses": "Lazer",
+        "date": "2022-09-10T20:28:03.114Z ",
+        "name": "Teatro"
+      },
+      {
+        "id": 1042704397685,
+        "price": "250.00",
+        "typesofexpenses": "Educação",
+        "date": "2022-02-05T20:28:03.114Z ",
+        "name": "Livros"
+      },
+      {
+        "id": 969971920546,
+        "price": "175.00",
+        "typesofexpenses": "Outros",
+        "date": "2021-10-14T20:28:03.114Z ",
+        "name": "Combustivel"
+      },
+      {
+        "id": 1265618450706,
+        "price": "182.00",
+        "typesofexpenses": "Lazer",
+        "date": "2021-11-24T20:28:03.114Z ",
+        "name": "Bar"
+      },
+      {
+        "id": 1536059235947,
+        "price": "350.00",
+        "typesofexpenses": "Casa",
+        "date": "2021-12-25T20:28:03.114Z ",
+        "name": "Móvel"
+      },
+      {
+        "id": 649695277368,
+        "price": "450.00",
+        "typesofexpenses": "Lazer",
+        "date": "2022-01-15T20:28:03.114Z ",
+        "name": "Cinema"
+      },
+      {
+        "id": 520133124386,
+        "price": "350.00",
+        "typesofexpenses": "Educação",
+        "date": "2021-12-15T20:28:03.114Z ",
+        "name": "Faculdade"
+      },
+      {
+        "id": 1016443659295,
+        "price": "450.00",
+        "typesofexpenses": "Mercado",
+        "date": "2022-01-13T20:28:03.114Z ",
+        "name": "Compra semanal"
+      },
+      {
+        "id": 711517960337,
+        "price": "775.00",
+        "typesofexpenses": "Educação",
+        "date": "2021-11-25T20:28:03.114Z ",
+        "name": "Livros"
+      },
+      {
+        "id": 937586446894,
+        "price": "280.00",
+        "typesofexpenses": "Lazer",
+        "date": "2021-10-25T20:28:03.114Z ",
+        "name": "Jogo eletrônico"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 26,
+    "financialData": [
+      {
+        "id": 1306711149237,
+        "price": "350.00",
+        "typesofexpenses": "Casa",
+        "date": "2021-12-25T20:28:03.114Z ",
+        "name": "Móvel"
+      },
+      {
+        "id": 1020155207896,
+        "price": "450.00",
+        "typesofexpenses": "Lazer",
+        "date": "2022-01-15T20:28:03.114Z ",
+        "name": "Cinema"
+      },
+      {
+        "id": 12555433649,
+        "price": "350.00",
+        "typesofexpenses": "Educação",
+        "date": "2021-12-15T20:28:03.114Z ",
+        "name": "Faculdade"
+      },
+      {
+        "id": 187161593979,
+        "price": "450.00",
+        "typesofexpenses": "Mercado",
+        "date": "2022-01-13T20:28:03.114Z ",
+        "name": "Compra semanal"
+      },
+      {
+        "id": 317802018420,
+        "price": "775.00",
+        "typesofexpenses": "Educação",
+        "date": "2021-11-25T20:28:03.114Z ",
+        "name": "Livros"
+      },
+      {
+        "id": 1490110555509,
+        "price": "280.00",
+        "typesofexpenses": "Lazer",
+        "date": "2021-10-25T20:28:03.114Z ",
+        "name": "Jogo eletrônico"
+      }
+    ]
+  }
+]
