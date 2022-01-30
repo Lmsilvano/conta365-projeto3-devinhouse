@@ -20,11 +20,15 @@ module.exports = {
         #swagger.parameters['file'] = {
               in: 'formData',
               type: 'file',
+              name: 'financialData',
               required: 'true',
               description: 'Xlsx archive with the following columns (or first row) in the order presented: price-typesofexpenses-date-name',
               accept: '/',
         } 
         */
+        let extensionValidation = req.file.originalname.split('.')
+        // #swagger.responses [400] = { description: 'Invalid file extension. Only accepts files with the xlsx extension.' 
+        if(extensionValidation[extensionValidation.length -1] !== "xlsx") return res.status(400).send({ message: `Invalid file extension. Only accepts files with the xlsx extension` })
         const xlsxFinancialData = await xlsxPopulate.fromDataAsync(req.file.buffer)
         const { userId } = req.params
         const rows = xlsxFinancialData.sheet(0).usedRange().value()
@@ -85,12 +89,12 @@ module.exports = {
             console.log(!Number(userId))
             // #swagger.responses [422] = { description: 'Invalid format for userId (Only accepts Number(INT)).' }
             if (!Number(userId)) return res.status(422).send({ message: `Invalid format for userId` })
-            // #swagger.responses [422] = { description: 'Invalid format for financialId (Only accepts String(UUID)).' }
+            // #swagger.responses [422] = { description: 'Invalid format for financialId (Only accepts Number(INT)).' }
             if (!financialId || financialId.toString().length < 8) return res.status(422).send({ message: `Invalid format for financialId` })
             const financialData = getData('financial.json')
             const financial = financialData.find(financial => financial.userId === Number(userId))
-            // #swagger.responses [404] = { description: 'Financial data not found.' }
-            if (!financial) return res.status(404).send({ message: `Financial ID not found!` })
+            // #swagger.responses [404] = { description: 'Financial data for this userID not found.' }
+            if (!financial) return res.status(404).send({ message: `UserID not found!` })
             const financialDataId = financial.financialData.find(financialData => financialData.id === Number(financialId))
             // #swagger.responses [404] = { description: 'Financial data not found.' }
             if (!financialDataId) return res.status(404).send({ message: `Financial ID not found!` })
@@ -119,6 +123,7 @@ module.exports = {
             in: 'path',
             description: 'typesOfExpenses, filter by typesOfExpenses',
             example: 'Mercado',
+            required: false,
             type: 'string'
         }
         */
