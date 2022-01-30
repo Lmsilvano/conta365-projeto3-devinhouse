@@ -27,7 +27,7 @@ module.exports = {
         } 
         */
         let extensionValidation = req.file.originalname.split('.')
-        // #swagger.responses [400] = { description: 'Invalid file extension. Only accepts files with the xlsx extension.' 
+        // #swagger.responses [400] = { description: 'Invalid file extension. Only accepts files with the xlsx extension.' }
         if(extensionValidation[extensionValidation.length -1] !== "xlsx") return res.status(400).send({ message: `Invalid file extension. Only accepts files with the xlsx extension` })
         const xlsxFinancialData = await xlsxPopulate.fromDataAsync(req.file.buffer)
         const { userId } = req.params
