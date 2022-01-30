@@ -41,7 +41,6 @@ module.exports = {
             return years
         } else {
             await financial.financialData.map((item) => {
-                console.log('pelo menos entrou aqui', item.typesofexpenses === typesOfExpenses)
                 if (item.typesofexpenses.toLowerCase() === typesOfExpenses.toLowerCase()) {
                     let date = new Date(item.date.trim())
                     let year = date.getFullYear()
