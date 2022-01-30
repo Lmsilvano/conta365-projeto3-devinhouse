@@ -72,13 +72,13 @@ module.exports = {
             in: 'path',
             description: 'User ID for location of financial data',
             example: '12',
-            required: true,
+            required: 'true',
             type: 'integer'
         }
         #swagger.parameters['financialId'] = {
             in: 'path',
             description: 'Financial ID for location of financial data to delete',
-            required: true,
+            required: 'true',
             example: '649695277368',
             type: 'number'
         }
@@ -116,14 +116,15 @@ module.exports = {
         #swagger.parameters['userId'] = {
             in: 'path',
             description: 'User ID for location of financial data',
-            required: true,
+            required: 'true',
             type: 'integer'
         }
         #swagger.parameters['query'] = {
-            in: 'path',
+            in: 'query',
+            name: 'typesOfExpenses',
             description: 'typesOfExpenses, filter by typesOfExpenses',
             example: 'Mercado',
-            required: false,
+            required: 'false',
             type: 'string'
         }
         */
@@ -137,8 +138,9 @@ module.exports = {
             // #swagger.responses [404] = { description: 'Financial data not found.' }
             if (!financial) return res.status(404).send({ message: `Financial data for this ID not found!` })
             const financialDataByDate = await financialServices.financialByDateGen(financial, typesOfExpenses)
-            // #swagger.responses [200] = { description: 'Financial data by date and query.' }
-            return res.status(200).send({ financialDataByDate })
+            if (Object.keys(financialDataByDate).length === 0) return res.status(200).send({ message: `No registry found for this filter.` })
+            // #swagger.responses [200] = { description: 'Financial data by date and/or query.' }
+            return res.status(200).send({ ...financialDataByDate })
         } catch (err) {
             return res.status(422).send({ message: `UserID and Date are required! ${err.message}` })
         }
