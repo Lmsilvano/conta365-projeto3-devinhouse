@@ -135,9 +135,10 @@ module.exports = {
             if (!Number(userId)) return res.status(422).send({ message: `Invalid format for userId` })
             const financialData = getData('financial.json')
             const financial = financialData.find(financial => financial.userId === Number(userId))
-            // #swagger.responses [404] = { description: 'Financial data not found.' }
+            // #swagger.responses [404] = { description: 'Financial data for this userID not found!' }
             if (!financial) return res.status(404).send({ message: `Financial data for this ID not found!` })
             const financialDataByDate = await financialServices.financialByDateGen(financial, typesOfExpenses)
+            // #swagger.responses [200] = { description: 'No registry found for this filter.' }
             if (Object.keys(financialDataByDate).length === 0) return res.status(200).send({ message: `No registry found for this filter.` })
             // #swagger.responses [200] = { description: 'Financial data by date and/or query.' }
             return res.status(200).send({ ...financialDataByDate })
