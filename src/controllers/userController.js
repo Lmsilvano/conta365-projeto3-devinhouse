@@ -83,7 +83,9 @@ module.exports = {
         const { id } = req.params
         const users = getData('user.json')
         const existUser = users.find((item) => item.id === Number(id))
-        if (!existUser) res.status(404).send({ message: "User id not found" })
+        // #swagger.responses[404] = { description: 'User ID not found.' }
+        if (!existUser) return res.status(404).send({ message: "User id not found" })
+        // #swagger.responses[200] = { description: 'Done' }
         return res.status(200).send({ user: existUser })
     },
     async populateDb(req, res) {
