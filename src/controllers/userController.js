@@ -23,7 +23,7 @@ module.exports = {
         }
         */
         const validateFilters = await userServices.fieldsVerify(req.body)
-        // #swagger.responses[422] = { description: 'Some field was not filled in correctly (with strings, or was left blank) or some field besides name and email was sent in the request.' }
+        // #swagger.responses[422] = { description: 'Some field was not filled in correctly. Only accepts strings. Make sure no fields are left blank or some field besides name and email was sent in the request.' }
         if (validateFilters) return res.status(422).send({ message: `${validateFilters.message}` })
         createOrUpdateData('user.json', req.body)
         // #swagger.responses[201] = { description: 'User registered successfully.' }
@@ -58,7 +58,7 @@ module.exports = {
         */
         const { id } = req.params
         const validateFilters = await userServices.fieldsVerify(req.body)
-        // #swagger.responses[422] = { description: 'Some field was not filled in correctly (with strings, or was left blank) or some field besides name and email was sent in the request.' }
+        // #swagger.responses[422] = { description: 'Some field was not filled in correctly. Only accepts strings. Make sure no fields are left blank or some field besides name and email was sent in the request.' }
         if (validateFilters) return res.status(422).send({ message: `${validateFilters.message}` })
         const users = getData('user.json')
         const existUser = users.find((item) => item.id === Number(id))
