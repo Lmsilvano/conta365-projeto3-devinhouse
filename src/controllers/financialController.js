@@ -89,8 +89,8 @@ module.exports = {
             console.log(!Number(userId))
             // #swagger.responses [422] = { description: 'Invalid format for userId (Only accepts Number(INT)).' }
             if (!Number(userId)) return res.status(422).send({ message: `Invalid format for userId` })
-            // #swagger.responses [422] = { description: 'Invalid format for financialId (Only accepts Number(INT)).' }
-            if (!financialId || financialId.toString().length < 8) return res.status(422).send({ message: `Invalid format for financialId` })
+            // #swagger.responses [422] = { description: 'Invalid format for financialId. Only accepts numbers(INT) with more than 8 numeric characters.' }
+            if (!financialId || financialId.toString().length < 8) return res.status(422).send({ message: `Invalid format for financialId. Only accepts numbers with more than 8 numeric characters` })
             const financialData = getData('financial.json')
             const financial = financialData.find(financial => financial.userId === Number(userId))
             // #swagger.responses [404] = { description: 'Financial data for this userID not found.' }
