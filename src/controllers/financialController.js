@@ -143,7 +143,7 @@ module.exports = {
             // #swagger.responses [200] = { description: 'Financial data by date and/or query.' }
             return res.status(200).send({ ...financialDataByDate })
         } catch (err) {
-            return res.status(422).send({ message: `UserID or Query has some incorrect data.` })
+            return res.status(501).send({ message: `UserID or Query has some incorrect data.` })
         }
     }
 }
