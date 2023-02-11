@@ -14,7 +14,7 @@
     "axios": "^0.25.0",
     "express": "^4.17.2",
     "multer": "^1.4.4",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.20",
     "swagger-autogen": "^2.18.8",
     "swagger-ui-express": "^4.3.0",
     "uuid": "^8.3.2",
